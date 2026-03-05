@@ -33,36 +33,45 @@ This pipeline is broken down into three distinct phases:
    ```bash
    git clone [https://github.com/yourusername/market-volatility-sentinel.git](https://github.com/yourusername/market-volatility-sentinel.git)
    cd market-volatility-sentinel
-Install the required dependencies:
-This project relies on a few external libraries. Install them via pip:
+   ```
 
-Bash
-pip install requests yfinance pandas matplotlib
-🚀 How to Run the Pipeline
+2. **Install the required dependencies:**
+   This project relies on a few external libraries. Install them via pip:
+   ```bash
+   pip install requests yfinance pandas matplotlib
+   ```
+
+---
+
+## 🚀 How to Run the Pipeline
+
 Run the scripts in sequential order to process the data from raw ingestion to final alerting:
 
-Step 1: Extract the Data
-
-Bash
+**Step 1: Extract the Data**
+```bash
 python phase1_ingestion.py
-(Check your folder tree—you will see a new raw_ingestion/ folder organized by today's date).
+```
+*(Check your folder tree—you will see a new `raw_ingestion/` folder organized by today's date).*
 
-Step 2: Transform the Data
-
-Bash
+**Step 2: Transform the Data**
+```bash
 python phase2_transformation.py
-(This generates the daily_market_pulse.csv file).
+```
+*(This generates the `daily_market_pulse.csv` file).*
 
-Step 3: Run the Sentinel Alerts
-
-Bash
+**Step 3: Run the Sentinel Alerts**
+```bash
 python phase3_sentinel.py
-(If volatility is detected, check your directory for the generated .png chart, .txt summary, and .log file).
+```
+*(If volatility is detected, check your directory for the generated `.png` chart, `.txt` summary, and `.log` file).*
 
-📂 Expected Directory Structure
+---
+
+## 📂 Expected Directory Structure
+
 After running all three phases, your project folder will look like this:
 
-Plaintext
+```text
 market-volatility-sentinel/
 │
 ├── phase1_ingestion.py
@@ -78,5 +87,7 @@ market-volatility-sentinel/
 ├── sentinel_pipeline.log
 ├── volatility_alert_chart_YYYY-MM-DD.png
 └── Executive_Summary_YYYY-MM-DD.txt
-📝 Note on Phase 2 "Reality Check"
-Because this pipeline relies on daily percentage changes, Day 1 execution includes a mocked "yesterday" value for the USD/EGP rate to demonstrate the alerting logic. For ongoing production use, remove the mock block in phase2_transformation.py and load the previous day's JSON file.
+```
+
+## 📝 Note on Phase 2 "Reality Check"
+Because this pipeline relies on daily percentage changes, Day 1 execution includes a mocked "yesterday" value for the USD/EGP rate to demonstrate the alerting logic. For ongoing production use, remove the mock block in `phase2_transformation.py` and load the previous day's JSON file.
