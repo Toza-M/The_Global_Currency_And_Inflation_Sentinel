@@ -1,0 +1,19 @@
+=========================================
+EXECUTIVE MARKET SUMMARY: 2026-03-06
+=========================================
+STATUS: HIGH VOLATILITY DETECTED
+
+Key Metrics:
+- Gold Close Price: $5097.80 (0.64% change)
+- USD/EGP Rate:     50.12 (2.04% change)
+
+Analysis:
+The Volatility Index was triggered because the Egyptian Pound dropped in value 
+against the USD by more than 1%, while Gold prices simultaneously rose. 
+This inverse correlation often suggests a flight to safe-haven assets amidst 
+localized currency devaluation.
+
+Action Required: 
+Please review the generated chart (volatility_alert_chart_2026-03-06.png) 
+for visual correlation trends.
+=========================================
